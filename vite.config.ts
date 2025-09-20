@@ -14,8 +14,8 @@ export default defineConfig(({ mode }) => {
       outDir: 'dist',
     },
     plugins: [
-      tailwindcss(),
       !isTest && reactRouter(),
+      tailwindcss(),
       envOnlyMacros(),
       vercelPreset(),
     ],
