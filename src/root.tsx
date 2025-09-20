@@ -13,6 +13,7 @@ import { store } from './store';
 
 import type { JSX } from 'react';
 
+import './index.css';
 import './App.css';
 
 export default function Root(): JSX.Element {
