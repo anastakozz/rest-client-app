@@ -37,11 +37,7 @@ export default function handleRequest(
     );
 
     const { pipe, abort } = renderToPipeableStream(
-      <body>
-        <div id="root">
-          <ServerRouter context={routerContext} url={request.url} />
-        </div>
-      </body>,
+      <ServerRouter context={routerContext} url={request.url} />,
       {
         [readyOption]() {
           shellRendered = true;

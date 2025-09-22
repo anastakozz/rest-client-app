@@ -13,8 +13,6 @@ import { store } from './store';
 
 import type { JSX } from 'react';
 
-import './App.css?url';
-
 export function links() {
   return [{ rel: 'stylesheet', href: './App.css?url' }];
 }
