@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Provider } from 'react-redux';
-import { Outlet, Scripts, useNavigate } from 'react-router';
+import { Links, Meta, Outlet, Scripts, useNavigate } from 'react-router';
 
 import { AuthProvider } from './context/AuthContext.tsx';
 import { initAuthWatcher } from './service/firebase.ts';
@@ -13,7 +13,11 @@ import { store } from './store';
 
 import type { JSX } from 'react';
 
-import './App.css';
+import './App.css?url';
+
+export function links() {
+  return [{ rel: 'stylesheet', href: './App.css?url' }];
+}
 
 export default function Root(): JSX.Element {
   const navigate = useNavigate();
@@ -29,6 +33,8 @@ export default function Root(): JSX.Element {
     <html lang="en">
       <head>
         <meta charSet="UTF-8" />
+        <Meta />
+        <Links />
         <title>My App</title>
       </head>
       <body>
