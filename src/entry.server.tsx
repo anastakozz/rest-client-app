@@ -38,7 +38,9 @@ export default function handleRequest(
 
     const { pipe, abort } = renderToPipeableStream(
       <body>
-        <ServerRouter context={routerContext} url={request.url} />
+        <div id="root">
+          <ServerRouter context={routerContext} url={request.url} />
+        </div>
       </body>,
       {
         [readyOption]() {
