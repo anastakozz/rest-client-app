@@ -1,10 +1,7 @@
 import { PassThrough } from 'node:stream';
 
 import type { AppLoadContext, EntryContext } from 'react-router';
-import {
-  createReadableStreamFromReadable,
-  getStylesForRoute,
-} from '@react-router/node';
+import { createReadableStreamFromReadable } from '@react-router/node';
 import { ServerRouter } from 'react-router';
 import { isbot } from 'isbot';
 import type { RenderToPipeableStreamOptions } from 'react-dom/server';
@@ -45,7 +42,7 @@ export default function handleRequest(
           <meta charSet="UTF-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <title>My App</title>
-          {getStylesForRoute(routerContext).map((link) => (
+          {routerContext.styles.map((link) => (
             <link key={link.href} rel="stylesheet" href={link.href} />
           ))}
         </head>
