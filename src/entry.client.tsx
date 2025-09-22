@@ -5,7 +5,7 @@ import './App.css';
 
 startTransition(() => {
   hydrateRoot(
-    document,
+    document.getElementById('root')!,
     <StrictMode>
       <HydratedRouter />
     </StrictMode>
